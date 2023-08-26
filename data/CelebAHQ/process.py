@@ -31,9 +31,10 @@ with open(au_path, "r") as f:
 
 ct = 0
 for src_name in os.listdir(src_hq_path):
-    if src_name in valid_name_list:
+    dest_name = 'frame_det_00_' + src_name
+    if dest_name in valid_name_list:
         src_path = os.path.join(src_hq_path, src_name)
-        dest_path = os.path.join(dest_hq_path, 'frame_det_00_' + src_name)
+        dest_path = os.path.join(dest_hq_path, dest_name)
 
         shutil.copy(src_path, dest_path)
         ct += 1
